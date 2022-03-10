@@ -16,14 +16,20 @@ enum LocationsDetailsModel {
         }
         struct Response: Codable {
             
-            let results : LocationsDetails?
+            let consolidatedWeather : [ConsolidatedWeather]?
+            let woeid : Int?
+            let title : String?
+            let sources : [Sources]?
             
             enum CodingKeys: String, CodingKey {
-                case results
+                case consolidatedWeather = "consolidated_weather"
+                case woeid
+                case title
+                case sources
             }
         }
         struct ViewModel {
-            let dataLocationsDetails  : LocationsDetails?
+            let consolidatedWeather  : LocationsDetailsModel.GetLocationsDetails.Response?
         }
     }
 }

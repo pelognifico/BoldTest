@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2b-pN-AZ2">
                     <rect key="frame" x="0.0" y="59" width="414" height="44"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Places: Coffee, Whole Foods..." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="TuJ-JW-n74" customClass="BTTextField" customModule="BoldTest" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="TuJ-JW-n74" customClass="BTTextField" customModule="BoldTest" customModuleProvider="target">
                             <rect key="frame" x="15" y="0.0" width="389" height="44"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +133,7 @@
     </objects>
     <designables>
         <designable name="TuJ-JW-n74">
-            <size key="intrinsicContentSize" width="235.5" height="39"/>
+            <size key="intrinsicContentSize" width="71" height="39"/>
         </designable>
     </designables>
     <resources>

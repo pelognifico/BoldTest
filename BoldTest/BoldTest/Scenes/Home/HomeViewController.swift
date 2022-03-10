@@ -142,19 +142,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
                                                         fatalError()
         }
         
-        let dataLocationQuery = dataLocationQuery?[indexPath.row]
-        if let data = dataLocationQuery {
-            cell.configUI(locations: data)
+        if let dataLocationQuery = dataLocationQuery?[indexPath.row] {
+            cell.configUI(locations: dataLocationQuery)
         }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewCtrl = LocationsDetailsViewController()
-        viewCtrl.dataLocationFromHome = dataLocationQuery?[indexPath.row]
-        viewCtrl.woeid = dataLocationQuery?[indexPath.row].woeid
         
-        self.navigationController?.pushViewController(viewCtrl, animated: true)
+        if let dataLocationQuery = dataLocationQuery?[indexPath.row] {
+            viewCtrl.dataLocationFromHome = dataLocationQuery
+            viewCtrl.woeid = dataLocationQuery.woeid
+            self.navigationController?.pushViewController(viewCtrl, animated: true)
+        } else {
+            displaySimpleAlert(with: "Error", message: "This location does not have climatological details.")
+        }
     }
 }

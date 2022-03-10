@@ -17,14 +17,14 @@ class BaseViewController: UIViewController {
 //        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    func setupBackButton() {
+    func setupBackButton(backButtonColor: UIColor) {
         let backButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "backArrow"),
                                                               style: .plain,
                                                               target: self,
                                                               action: #selector(self.backButtonClickedDismiss(sender:)))
         
         self.navigationItem.leftBarButtonItem  = backButtonItem
-        self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        self.navigationItem.leftBarButtonItem?.tintColor = backButtonColor
         
     }
     

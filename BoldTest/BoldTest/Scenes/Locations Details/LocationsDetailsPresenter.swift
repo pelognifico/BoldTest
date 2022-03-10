@@ -18,7 +18,7 @@ class LocationsDetailsPresenter: LocationsDetailsPresentationLogic {
   
     // MARK: - Present Places
     func presentLocationsDetails(response: LocationsDetailsModel.GetLocationsDetails.Response) {
-        let viewModel = LocationsDetailsModel.GetLocationsDetails.ViewModel(dataLocationsDetails: response.results)
+        let viewModel = LocationsDetailsModel.GetLocationsDetails.ViewModel(consolidatedWeather: response)
         viewController?.displayLocationsDetails(viewModel: viewModel, on: .main)
     }
     

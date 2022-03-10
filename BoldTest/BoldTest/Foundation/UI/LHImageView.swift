@@ -1,6 +1,6 @@
 //
-//  BTImageView.swift
-//  BoldTest
+//  FWImageView.swift
+//  Food Wallet
 //
 //  Created by Carlos Villamizar on 8/3/22.
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-final class BTImageView: UIImageView {
+final class LHImageView: UIImageView {
     
     @IBInspectable
     var borderWidth: CGFloat {
