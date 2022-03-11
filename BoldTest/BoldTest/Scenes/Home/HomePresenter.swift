@@ -16,7 +16,7 @@ class HomePresenter: HomePresentationLogic {
     
     weak var viewController: HomeDisplayLogic?
   
-    // MARK: - Present Places
+    // MARK: - Present LocationQuery
     func presentLocationQuery(response: [SearchLocationModel.GetSearchLocationQuery.Response]) {
         let viewModel = SearchLocationModel.GetSearchLocationQuery.ViewModel(data: response)
         viewController?.displayLocationQuery(viewModel: viewModel, on: .main)

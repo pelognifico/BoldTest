@@ -17,25 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cielo-con-nubes" translatesAutoresizingMaskIntoConstraints="NO" id="gbk-5x-XPr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backCell" translatesAutoresizingMaskIntoConstraints="NO" id="Mne-kY-4NE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="climate consultant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoS-F1-lpN">
-                                <rect key="frame" x="82.5" y="407.5" width="249" height="81.5"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNx-dM-0CY">
+                                <rect key="frame" x="71.5" y="353" width="271" height="55"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-cz-SUL">
+                                <rect key="frame" x="87" y="416" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="kPd-mP-gSH"/>
+                                    <constraint firstAttribute="width" constant="240" id="qU7-GY-f9w"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstItem="gbk-5x-XPr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JG9-26-Ekb"/>
-                            <constraint firstAttribute="bottom" secondItem="gbk-5x-XPr" secondAttribute="bottom" id="Kbe-0R-4cN"/>
-                            <constraint firstItem="BoS-F1-lpN" firstAttribute="centerX" secondItem="gbk-5x-XPr" secondAttribute="centerX" id="PFf-pi-dAG"/>
-                            <constraint firstItem="BoS-F1-lpN" firstAttribute="centerY" secondItem="gbk-5x-XPr" secondAttribute="centerY" id="TZW-63-T5l"/>
-                            <constraint firstItem="gbk-5x-XPr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bR6-QC-pfx"/>
-                            <constraint firstItem="gbk-5x-XPr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="uHC-5y-25z"/>
+                            <constraint firstItem="ZNx-dM-0CY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="309" id="Ls2-Gd-1I0"/>
+                            <constraint firstItem="Mne-kY-4NE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="Ne5-1q-OhD"/>
+                            <constraint firstItem="gjO-cz-SUL" firstAttribute="centerX" secondItem="ZNx-dM-0CY" secondAttribute="centerX" id="U2G-Lf-RZr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mne-kY-4NE" secondAttribute="bottom" constant="-34" id="fwr-Hs-bet"/>
+                            <constraint firstItem="Mne-kY-4NE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gmz-0s-hQ1"/>
+                            <constraint firstItem="gjO-cz-SUL" firstAttribute="top" secondItem="ZNx-dM-0CY" secondAttribute="bottom" constant="8" symbolic="YES" id="lU3-cM-3cu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mne-kY-4NE" secondAttribute="trailing" id="qeg-An-Ngi"/>
+                            <constraint firstItem="ZNx-dM-0CY" firstAttribute="centerX" secondItem="Mne-kY-4NE" secondAttribute="centerX" id="s0M-gF-CrE"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,9 +54,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cielo-con-nubes" width="2280" height="4032"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="backCell" width="276" height="183"/>
+        <image name="icon" width="512" height="512"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

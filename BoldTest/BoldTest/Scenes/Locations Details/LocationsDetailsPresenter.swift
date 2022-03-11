@@ -16,7 +16,7 @@ class LocationsDetailsPresenter: LocationsDetailsPresentationLogic {
     
     weak var viewController: LocationsDetailsDisplayLogic?
   
-    // MARK: - Present Places
+    // MARK: - Present LocationsDetails
     func presentLocationsDetails(response: LocationsDetailsModel.GetLocationsDetails.Response) {
         let viewModel = LocationsDetailsModel.GetLocationsDetails.ViewModel(consolidatedWeather: response)
         viewController?.displayLocationsDetails(viewModel: viewModel, on: .main)

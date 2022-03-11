@@ -1,6 +1,6 @@
 //
 //  Helper.swift
-//  LottoHub
+//  BoldTest
 //
 //  Created by Carlos Villamizar on 8/3/22.
 //

@@ -14,7 +14,6 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.clearBackground()
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func setupBackButton(backButtonColor: UIColor) {

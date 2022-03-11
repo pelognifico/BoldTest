@@ -51,8 +51,6 @@ class NetworkService {
             
             self.dataRequest?.responseJSON(completionHandler: { (response) in
                 
-//                self.refreshToken(headers: response.response?.allHeaderFields)
-                
                 switch response.result {
                 case .success(let value):
                     

@@ -21,6 +21,8 @@ class HomeViewController: BaseViewController {
     }
     @IBOutlet weak var locationsTableView: UITableView!
     @IBOutlet weak var locationView: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
+    
     
     let cellSearchLocationQueryNibName = "HomeTableViewCell"
     var text: String?
@@ -94,16 +96,18 @@ class HomeViewController: BaseViewController {
         if searchTextField.text?.isEmpty == true {
             locationsTableView.isHidden = true
             locationView.isHidden = false
+            messageLabel.text = "Find weather locations"
         } else {
             locationsTableView.isHidden = false
             locationView.isHidden = true
             if let text = searchTextField?.text?.lowercased() {
                 getSearchLocationQuery(query: text)
+                locationsTableView.reloadData()
             }
         }
     }
     
-    @objc private func textFieldDidChange(_ textField: UITextField) {
+    @objc private func textFieldDidChange(_ textField: BTTextField) {
         search()
     }
     
@@ -119,6 +123,12 @@ extension HomeViewController: HomeDisplayLogic {
             
             refresher.endRefreshing()
             locationsTableView.reloadData()
+        } else {
+            dataLocationQuery?.removeAll()
+            locationsTableView.reloadData()
+            locationsTableView.isHidden = true
+            locationView.isHidden = false
+            messageLabel.text = "Weather location not found"
         }
     }
     
@@ -130,24 +140,26 @@ extension HomeViewController: HomeDisplayLogic {
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
-    // Show rows of the table depend status variable bool
+    // Show rows of the table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataLocationQuery?.count ?? 0
     }
     
-    // Show cells of the table depend status variable bool
+    // Show cells of the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseIdentifier,
                                                        for: indexPath) as? HomeTableViewCell else {
                                                         fatalError()
         }
         
-        if let dataLocationQuery = dataLocationQuery?[indexPath.row] {
-            cell.configUI(locations: dataLocationQuery)
+        let data = dataLocationQuery?[indexPath.row]
+        if let dataLocation = data {
+            cell.configUI(locations: dataLocation)
         }
         return cell
     }
     
+    // Actions cells of the table
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewCtrl = LocationsDetailsViewController()
         

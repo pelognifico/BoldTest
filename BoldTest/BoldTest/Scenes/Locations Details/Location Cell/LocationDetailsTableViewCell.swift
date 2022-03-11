@@ -2,29 +2,23 @@
 //  LocationDetailsTableViewCell.swift
 //  BoldTest
 //
-//  Created by UnLimited on 9/3/22.
+//  Created by Carlos Villamizar on 9/3/22.
 //
 
 import UIKit
+import Foundation
 
 class LocationDetailsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var dateDayLable: UILabel!
+    @IBOutlet weak var dateDayLabel: UILabel!
     @IBOutlet weak var theTempDegreeLabel: UILabel!
-    @IBOutlet weak var theTemImageView: LHImageView!
+    @IBOutlet weak var theTemImageView: BTImageView!
     
     static let reuseIdentifier = "SearchLocationQueryCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func confiUI(dateTemp : LocationsDetailsModel.GetLocationsDetails.ViewModel, indexArray : Int, abbr: Bool){
@@ -32,7 +26,21 @@ class LocationDetailsTableViewCell: UITableViewCell {
         let applicableDate = indexArray + 1
         let logoTemp = dateTemp.consolidatedWeather?.consolidatedWeather?[applicableDate].weather_state_abbr
         
-        dateDayLable.text = dateTemp.consolidatedWeather?.consolidatedWeather?[applicableDate].applicable_date
+        // Get date from JsonData
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        // Set formatter to date
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "EEEE, MMMM d, yyyy"
+        
+        // Show date in label
+        if let date = dateFormatterGet.date(from: (dateTemp.consolidatedWeather?.consolidatedWeather?[applicableDate].applicable_date)!) {
+            print(dateFormatterPrint.string(from: date))
+            dateDayLabel.text = dateFormatterPrint.string(from: date)
+        } else {
+           print("There was an error decoding the string")
+        }
         
         theTemImageView.setImage(urlString: "https://www.metaweather.com/static/img/weather/png/\(logoTemp ?? "").png", imageView: theTemImageView)
         
@@ -42,10 +50,10 @@ class LocationDetailsTableViewCell: UITableViewCell {
         }
         
         if abbr {
-            dateDayLable.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+            dateDayLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
             theTempDegreeLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         } else {
-            dateDayLable.textColor = .white
+            dateDayLabel.textColor = .white
             theTempDegreeLabel.textColor = .white
         }
     }
