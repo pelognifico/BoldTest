@@ -12,7 +12,7 @@ protocol LocationsDetailsServiceProtocol {
 }
 
 class LocationsDetailsAPI: LocationsDetailsServiceProtocol {
-    // Comunication with EndPoint
+    
     func getLocationsDetails(request: LocationsDetailsModel.GetLocationsDetails.Request, completion: @escaping (Result<LocationsDetailsModel.GetLocationsDetails.Response, HomeError>) -> Void) {
         NetworkService.share.request(endpoint: LocationsDetailsEndpoint.getLocationsDetails(woeid: request.woeid)) { result in
             switch result {

@@ -109,7 +109,6 @@ class LocationsDetailsViewController: BaseViewController {
 
     }
     
-    // Configure CellView
     private func settingTableView() {
         detailsTableView.register(UINib(nibName: cellSearchLocationQueryNibName, bundle: nil),
                            forCellReuseIdentifier: HomeTableViewCell.reuseIdentifier)
@@ -145,12 +144,11 @@ extension LocationsDetailsViewController: LocationsDetailsDisplayLogic {
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension LocationsDetailsViewController: UITableViewDelegate, UITableViewDataSource{
-    // Show rows of the table depend status variable bool
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    // Show cells of the table depend status variable bool
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationDetailsTableViewCell.reuseIdentifier,
                                                        for: indexPath) as? LocationDetailsTableViewCell else {

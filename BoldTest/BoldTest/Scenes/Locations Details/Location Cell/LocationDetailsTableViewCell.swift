@@ -26,15 +26,12 @@ class LocationDetailsTableViewCell: UITableViewCell {
         let applicableDate = indexArray + 1
         let logoTemp = dateTemp.consolidatedWeather?.consolidatedWeather?[applicableDate].weather_state_abbr
         
-        // Get date from JsonData
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd"
         
-        // Set formatter to date
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "EEEE, MMMM d, yyyy"
         
-        // Show date in label
         if let date = dateFormatterGet.date(from: (dateTemp.consolidatedWeather?.consolidatedWeather?[applicableDate].applicable_date)!) {
             print(dateFormatterPrint.string(from: date))
             dateDayLabel.text = dateFormatterPrint.string(from: date)

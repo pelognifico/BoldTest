@@ -81,7 +81,6 @@ class HomeViewController: BaseViewController {
         interactor?.getLocationQuery(request: request)
     }
     
-    // Configure CellView in HomeViewController
     private func settingTableView() {
         locationsTableView.register(UINib(nibName: cellSearchLocationQueryNibName, bundle: nil),
                            forCellReuseIdentifier: HomeTableViewCell.reuseIdentifier)
@@ -140,12 +139,11 @@ extension HomeViewController: HomeDisplayLogic {
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
-    // Show rows of the table
+  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataLocationQuery?.count ?? 0
     }
     
-    // Show cells of the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reuseIdentifier,
                                                        for: indexPath) as? HomeTableViewCell else {
@@ -159,7 +157,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    // Actions cells of the table
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewCtrl = LocationsDetailsViewController()
         

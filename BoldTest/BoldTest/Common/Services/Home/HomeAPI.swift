@@ -12,7 +12,7 @@ protocol HomeServiceProtocol {
 }
 
 class HomeAPI: HomeServiceProtocol {
-    // Comunication with EndPoint
+    
     func getLocationQuery(request: SearchLocationModel.GetSearchLocationQuery.Request, completion: @escaping (Result<[SearchLocationModel.GetSearchLocationQuery.Response], HomeError>) -> Void) {
         
         NetworkService.share.request(endpoint: HomeEndpoint.getLocationQuery(query: request.query)) { result in
